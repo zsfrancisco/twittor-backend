@@ -22,13 +22,13 @@ func InsertTweet(tweet models.SaveTweet) (string, bool, error) {
 		"date": tweet.Date,
 	}
 
-	response, err := collection.InsertOne(ctx, register)
+	result, err := collection.InsertOne(ctx, register)
 	if err != nil {
 		return "", false, err
 	}
 
 	/* objID is a tweet id := returns the ultimate register inserted  */
-	objID, _ := response.InsertedID.(primitive.ObjectID)
+	objID, _ := result.InsertedID.(primitive.ObjectID)
 
 	return objID.String(), true, nil
 }
