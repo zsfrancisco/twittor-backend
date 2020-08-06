@@ -26,6 +26,7 @@ func Handlers() {
 	router.HandleFunc("/upload_banner", middlew.CheckBD(middlew.ValidJWT(routers.UploadBanner))).Methods("POST")
 	router.HandleFunc("/get_banner", middlew.CheckBD(routers.GetBanner)).Methods("GET")
 	router.HandleFunc("/high_relation", middlew.CheckBD(middlew.ValidJWT(routers.HighRelation))).Methods("POST")
+	router.HandleFunc("/low_relation", middlew.CheckBD(middlew.ValidJWT(routers.LowRelation))).Methods("DELETE")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {

@@ -18,5 +18,5 @@ func InsertRelation(relation models.Relation) (bool, error) {
 		return false, err
 	}
 
-	return true, err
+	return true, nil
 }
