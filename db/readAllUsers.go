@@ -21,7 +21,7 @@ func ReadAllUsers(ID string, page int64, search string, typeSearch string) ([]*m
 	var results []*models.User
 
 	findOptions := options.Find()
-	findOptions.SetSkip((page-1)*2)
+	findOptions.SetSkip((page-1)*20)
 	findOptions.SetLimit(20)
 
 	/* comparing the search string with $regex regular expression (?i) i is that doesn't import if is upper or lower case */
